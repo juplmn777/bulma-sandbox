@@ -46,12 +46,12 @@
 <br><br>
 <h4 class="title is-3">Message : </h4>
 
-<article class=" is-primary">
-    <div class="">
+<article class="message is-primary">
+    <div class="message-header">
       <p>Primary</p>
       <button class="delete" aria-label="delete"></button>
     </div>
-    <div class="">
+    <div class="message-body">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac
   </article>
 
@@ -60,20 +60,20 @@
   <h4 class="title is-3">Fenetre Modale  : </h4>
 
   <!-- Déclencheur -->
-  <div class="box" id="mod">Clique moi</div>
+  <div class="box" id="modal">Clique moi</div>
 
   <!-- Modale -->
-  <div class="" id="content">
-      <div class=""></div>
-      <div class="">
-        <header class="">
-          <p class="">Modal title</p>
-          <button id="sup" class="delete" aria-label="close"></button>
+  <div class="modal" id="content">
+      <div class="modal-background" id="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Modal title</p>
+          <button id="close" class="delete" aria-label="close"></button>
         </header>
-        <section class="">
+        <section class="modal-card-body">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi et repudiandae ad officia enim porro hic totam magnam dolores? Rem!</p>
         </section>
-        <footer class="">
+        <footer class="modal-card-footer">
           <button class="button is-success">Save changes</button>
           <button class="button">Cancel</button>
         </footer>
@@ -84,7 +84,22 @@
 </div>
 
 <script>
-   
+   const modal = document.getElementById('modal');
+   const modalBackground = document.getElementById('modal-background');
+   const close = document.getElementById('close');
+   const content = document.getElementById('content');
+
+   modal.addEventListener('click', ()=>{
+     content.classList.toggle('is-active');
+   })
+
+   modalBackground.addEventListener('click', ()=>{
+     content.classList.toggle('is-active');
+   })
+
+   close.addEventListener('click', ()=>{
+     content.classList.toggle('is-active');
+   })
 </script>
 
 <br><br><br><br><br><br>
